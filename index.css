@@ -38,30 +38,27 @@ body {
 }
 
 #inputDecimals{
+    border-radius: 5px;
+    height: 40px;
+    width: 320px;
     margin: 15px 0 25px 0;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 15px;
 }
 
-
 #result{
     color: #3D685F;
+    padding: 10px;
 }
 
 #fail{
     color: #e83d4b;
-}
-h2{
     padding: 10px;
-}
-
-input{
-    border-radius: 5px;
-    height: 40px;
-    width: 320px;
+    margin-bottom: 15px;
 }
 
 #score{
     color: #a06b24;
     border-top: 2px solid #a06b24;
+    padding-top:20px;
 }
