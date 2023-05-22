@@ -10,10 +10,14 @@
 <body>
     <h1 id="symbol">π</h1>
     <h1 id="title">Pi Trainer</h1>
-    <input type="tel" id="inputDecimals">
-    <h2 id="result">π : 3.</h2>
-    <h2 id="fail">Fails: 0</h2>
-    <h2 id="score">Your Score: 0</h2>
+    <input type="tel" id="inputDecimals" placeholder="Write number π decimals...">
+    <div id="container">
+        <div id="opportunity"></div>
+        <div id="gain"></div>
+    </div>    
+    <div id="result">π:3.</div>
+    <h2 id="score">Score: 0 points</h2>
+    <button onclick="restartGame()" id="restart" >Restart</button>
 </body>
 <script src="./index.js"></script>
 </html>

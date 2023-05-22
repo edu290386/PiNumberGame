@@ -2,31 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #3D685F;
+    font-size: 20px;;
 }
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f6845b;
-    color: #3D685F;
+    background-image: radial-gradient(circle, #f67749, #f4834d, #f38e53, #f1985b, #efa263);
+    height: 100vh;  
 }
 
 #symbol{
-    font-size: 80px;
-    padding-top: 10px;
+    font-size: 60px;
     text-shadow: 2px 2px 0px #FFB650, 
     4px 4px 0px #FFD662, 
     6px 6px 0px  #FF80BF, 
     8px 8px 0px #EF5097, 
     10px 10px 0px #6868AC, 
     12px 12px 0px #90B1E0;
+    padding-bottom: 10px;
 }
 
 #title{
-    padding: 10px;
-    margin-bottom: 15px;
-    color: #3D685F;
+    display: none;
+    font-weight: bold;
     letter-spacing: 0.03em;
     font-size: 4rem;
     text-shadow: 2px 2px 0px #FFB650, 
@@ -40,15 +41,53 @@ body {
 #inputDecimals{
     border-radius: 5px;
     height: 40px;
-    width: 320px;
-    margin: 15px 0 25px 0;
+    width: 360px;
     border: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 15px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0 20px 0;
+    
+}
+
+#opportunity{
+    text-align: center;
+    background-color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 100px;
+    height: 25px;
     box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 15px;
 }
 
+#gain{
+    text-align: center;
+    background-color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 25px;
+    width: 240px;
+    font-size: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 15px;
+    transition-delay: 0.5s;
+}
+
 #result{
-    color: #3D685F;
-    padding: 10px;
+    font-weight:500;
+    letter-spacing: 0.67px;
+    font-size: 20px ;
+    height: auto;
+    width: 320px;
+    word-wrap: break-word;
+    padding-bottom: 20px;;
 }
 
 #fail{
@@ -58,7 +97,35 @@ body {
 }
 
 #score{
-    color: #a06b24;
-    border-top: 2px solid #a06b24;
-    padding-top:20px;
+    border-top: 2px solid;
+    padding:20px 0 20px 0;
+    width: 320px;
+    text-align: center;
+}
+
+#restart{
+    margin:7px;
+    height: 38px;
+    width: 120px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 15px;
+    display: none;
+    font-size: 18px;
+    background-color: #e83d4b;
+    color: #FFFFFF;
+}
+
+#restart:hover{
+    cursor: pointer;
+    background-color: #6868AC;
+}
+
+@media (min-width: 768px) {    
+    #title  {
+        display: block;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
 }
