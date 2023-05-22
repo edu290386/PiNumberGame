@@ -114,11 +114,44 @@ body {
     font-size: 18px;
     background-color: #e83d4b;
     color: #FFFFFF;
+    margin-bottom: 20px;
 }
 
 #restart:hover{
     cursor: pointer;
     background-color: #6868AC;
+}
+
+#statistics{
+    display: none;
+    flex-direction: column;
+    
+}
+#errors{
+    padding-top: 8px;
+    height: 38px;
+    width: 120px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 15px;
+    font-size: 18px;
+    background-color: #6868AC;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#maximun{
+    padding-top: 8px;
+    height: 38px;
+    width: 120px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 15px;
+    font-size: 18px;
+    background-color: #6868AC;
+    color: #FFFFFF;
+    text-align: center;
 }
 
 @media (min-width: 768px) {    

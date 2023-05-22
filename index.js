@@ -6,6 +6,8 @@ const fail = document.getElementById("fail");
 const restart= document.getElementById("restart");
 const opportunity = document.getElementById("opportunity");
 const gain = document.getElementById("gain");
+const statistics = document.getElementById("statistics");
+const maximun = document.getElementById("maximun");
 
 let totalscore = 0;
 let position = 0;
@@ -49,12 +51,13 @@ inputDecimals.addEventListener("keyup", event =>{
         result.style.color =  "#e83d4b";
         fails ++;
         renderStars();
-        
+        gain.innerText = `Failed Level: ${position + 1}`;
         if(fails===3) {
             inputDecimals.disabled = true;
             restart.style.display = "block";
             opportunity.innerText = icons[3];
             renderNumber();
+            renderStatistics();
             
         }
     }
@@ -68,6 +71,12 @@ function restartGame(){
     result.innerText = "π : 3.";
     renderStars();
     score.innerText = "Your Score: 0";
+    gain.innerText = "";
     position = 0;
     totalscore = 0;
+    statistics.style.display = "none";
+}
+function renderStatistics(){
+    statistics.style.display = "flex";
+    maximun.innerText = `Max Level: ${position}`
 }
