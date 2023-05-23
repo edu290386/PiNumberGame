@@ -14,29 +14,7 @@ body {
     height: 100vh;  
 }
 
-#symbol{
-    font-size: 60px;
-    text-shadow: 2px 2px 0px #FFB650, 
-    4px 4px 0px #FFD662, 
-    6px 6px 0px  #FF80BF, 
-    8px 8px 0px #EF5097, 
-    10px 10px 0px #6868AC, 
-    12px 12px 0px #90B1E0;
-    padding-bottom: 10px;
-}
 
-#title{
-    display: none;
-    font-weight: bold;
-    letter-spacing: 0.03em;
-    font-size: 4rem;
-    text-shadow: 2px 2px 0px #FFB650, 
-    4px 4px 0px #FFD662, 
-    6px 6px 0px  #FF80BF, 
-    8px 8px 0px #EF5097, 
-    10px 10px 0px #6868AC, 
-    12px 12px 0px #90B1E0;
-}
 
 #inputDecimals{
     border-radius: 5px;
