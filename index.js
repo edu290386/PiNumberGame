@@ -7,7 +7,6 @@ const result = document.getElementById("result");
 const score = document.getElementById("score");
 const gain = document.getElementById("gain");
 const restart= document.getElementById("restart");
-const errorList = document.getElementById("errorList");
 const tableContainer = document.querySelector("#tableContainer");
 
 
@@ -15,6 +14,7 @@ let position = 0;
 let totalscore = 0;
 let fails = 0;
 let wrongDecimals = [];
+let maxLevel = 0;
 
 function renderOpportunities(){
     let opportunities ="";
@@ -47,6 +47,9 @@ inputDecimals.addEventListener("keyup", event => {
         totalscore += 100;
         score.innerText = `Your score: ${totalscore} points`;
         gain.innerText = `+ ${100} points`;
+        if(maxLevel<position){
+            maxLevel = position;
+        }
         
     } else {
         result.style.color = "#CA3755";
@@ -60,13 +63,11 @@ inputDecimals.addEventListener("keyup", event => {
         if(fails===3) {
             inputDecimals.disabled = true;
             restart.style.display = "block";
-            statistics.style.display = "block";
+            statistics.style.display = "flex";
             opportunity.innerText = "✘";
             gain.innerText = `Next number: ${pi[position]}`;
+            maximun.innerText = `Maximun Level: ${maxLevel}`;
             renderStatistics(wrongDecimals);
-            
-            console.log(tableContent1)
-            
         }
     }
 })
@@ -84,26 +85,18 @@ function restartGame(){
     score.innerText = "Your Score: 0";
     gain.innerText = "";
     statistics.style.display = "none";
-    const tableContent1 = document.querySelector("#tableContent1");
-    const tableContent3 = document.querySelector("#tableContent3");
-    const tableContent2 = document.querySelector("#tableContent2");
-    const tableContent0 = document.querySelector("#tableContent0");
-    tableContent0.remove();
-    tableContent1.remove();
-    tableContent2.remove();
-    tableContent3.remove();
+    removeStatistics();       
 }
 
 function renderStatistics(data){
     console.log(data);
     tableContainer.innerHTML += 
     `<div id="tableContent0">
-        <div class="header1" id="column1">Digit</div>
-        <div class="header1" id="column2">Wrong Digit</div>
-        <div class="header1" id="column3">Right Digit</div>
+        <div class="header1" id="column1">Digit Failed</div>
+        <div class="header1" id="column2">Wrong Number</div>
+        <div class="header1" id="column3">Right Number</div>
     </div>`;
-    
-   
+
     data.forEach( (test, index) => {
     tableContainer.innerHTML += 
     `<div id="tableContent${index+1}">
@@ -116,8 +109,13 @@ function renderStatistics(data){
 
 }
 
-
 function removeStatistics(){
-
-
+    const tableContent0 = document.querySelector("#tableContent0");
+    const tableContent1 = document.querySelector("#tableContent1");
+    const tableContent2 = document.querySelector("#tableContent2");
+    const tableContent3 = document.querySelector("#tableContent3");
+    tableContent0.remove();
+    tableContent1.remove();
+    tableContent2.remove();
+    tableContent3.remove();
 }
