@@ -8,12 +8,13 @@ const score = document.getElementById("score");
 const gain = document.getElementById("gain");
 const restart= document.getElementById("restart");
 const errorList = document.getElementById("errorList");
-const tableContainer = document.getElementById("tableContainer");
+const tableContainer = document.querySelector("#tableContainer");
+
 
 let position = 0;
 let totalscore = 0;
 let fails = 0;
-wrongDecimals = [];
+let wrongDecimals = [];
 
 function renderOpportunities(){
     let opportunities ="";
@@ -53,7 +54,7 @@ inputDecimals.addEventListener("keyup", event => {
         renderOpportunities();
         gain.innerText = `Failed Level: ${position + 1}`;
         
-        let wrongNumber = {level:position+1, wrong:text, correct: pi[position]};
+        let wrongNumber = {digit:position+1, wrong:text, right: pi[position]};
         wrongDecimals.push(wrongNumber);    
 
         if(fails===3) {
@@ -63,6 +64,8 @@ inputDecimals.addEventListener("keyup", event => {
             opportunity.innerText = "✘";
             gain.innerText = `Next number: ${pi[position]}`;
             renderStatistics(wrongDecimals);
+            
+            console.log(tableContent1)
             
         }
     }
@@ -81,27 +84,40 @@ function restartGame(){
     score.innerText = "Your Score: 0";
     gain.innerText = "";
     statistics.style.display = "none";
-   
+    const tableContent1 = document.querySelector("#tableContent1");
+    const tableContent3 = document.querySelector("#tableContent3");
+    const tableContent2 = document.querySelector("#tableContent2");
+    const tableContent0 = document.querySelector("#tableContent0");
+    tableContent0.remove();
+    tableContent1.remove();
+    tableContent2.remove();
+    tableContent3.remove();
 }
 
 function renderStatistics(data){
     console.log(data);
     tableContainer.innerHTML += 
-    `<div id="tableContent">
+    `<div id="tableContent0">
         <div class="header1" id="column1">Digit</div>
         <div class="header1" id="column2">Wrong Digit</div>
         <div class="header1" id="column3">Right Digit</div>
     </div>`;
     
-
-    data.forEach( (test) => {
+   
+    data.forEach( (test, index) => {
     tableContainer.innerHTML += 
-    `<div id="tableContent1">
-        <div class="header1" id="column1">Digit</div>
-        <div class="header1" id="column2">Wrong Digit</div>
-        <div class="header1" id="column3">Right Digit</div>
+    `<div id="tableContent${index+1}">
+    <div id="column1">${test.digit}</div>
+    <div id="column2">${test.wrong}</div>
+    <div id="column3">${test.right}</div>
     </div>`
 });
-tableContainer.removeChild(tableContent);
+
+
 }
 
+
+function removeStatistics(){
+
+
+}
