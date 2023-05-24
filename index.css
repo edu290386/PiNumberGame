@@ -94,14 +94,15 @@ h1{
     height: auto;
     width: 360px;
     word-wrap: break-word;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     border-top: 2px solid;
+    border-bottom: 2px solid;
     padding-top: 10px;
 }
 
 #score{
-    border-top: 2px solid #CA3755;
-    padding:20px 0 20px 0;
+   
+    padding:20px 0 10px 0;
     width: 360px;
     text-align: center;
     color: #1ABC9C;
@@ -136,34 +137,25 @@ h1{
     width: 360px;
     margin-bottom: 30px;
     align-items: center;
-    border-top: #1ABC9C solid 2px;
-}
-
-
-#maximun{
-    margin-top: 30px;
-    padding: 10px;
-    width: 240px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 15px;
-    font-size: 18px;
-    background-color: #1ABC9C;
-    text-align: center;
-    color: #FFFFFF;
+    border-top: #CA3755 solid 2px;
     
 }
+
 
 
 #tableContainer{
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
-    
+    padding: 18px;
+    border-bottom: #1ABC9C solid 2px;
+    margin-bottom: 17px;
+    padding-bottom: 17px;
 }
+
 #tableContent0, #tableContent1, #tableContent2, #tableContent3{
     display: flex; 
     padding: 0 10px 0 10px;
+   
 }
 
 
@@ -174,9 +166,29 @@ h1{
     text-align: center;
     background-color: #F1F3F4;
     border-radius: 5px;
+    color: #595a5c;
+   
+    
 }
 
 #tableContent0 #column1, #tableContent0 #column2, #tableContent0 #column3 {
     background-color:#DADCE0;
     padding: 1px !important;
+    
+}
+
+
+#maximun{
+    margin-top: 2px;
+    padding: 10px;
+    width: 240px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 15px;
+    font-size: 18px;
+    background-color: #1ABC9C;
+    text-align: center;
+    color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 15px;
+
 }
