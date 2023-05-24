@@ -7,15 +7,18 @@ const result = document.getElementById("result");
 const score = document.getElementById("score");
 const gain = document.getElementById("gain");
 const restart= document.getElementById("restart");
+const errorList = document.getElementById("errorList");
+const tableContainer = document.getElementById("tableContainer");
 
 let position = 0;
 let totalscore = 0;
 let fails = 0;
+wrongDecimals = [];
 
 function renderOpportunities(){
     let opportunities ="";
     for (let i = 3 - fails; i > 0 ; i--) {
-        opportunities += icons[3-i];
+        opportunities = opportunities + "✔ "
     }  
     opportunity.innerText = opportunities;  
 }
@@ -38,21 +41,28 @@ inputDecimals.addEventListener("keyup", event => {
     
     if(text == pi[position]){
         result.innerText += text;
+        result.style.color = "#1ABC9C"
         position += 1;
         totalscore += 100;
-        score.innerText = `Your score is: ${totalscore} points`;
+        score.innerText = `Your score: ${totalscore} points`;
         gain.innerText = `+ ${100} points`;
+        
     } else {
-        result.style.color = "#e83d4b";
+        result.style.color = "#CA3755";
         fails += 1;
         renderOpportunities();
         gain.innerText = `Failed Level: ${position + 1}`;
+        
+        let wrongNumber = {level:position+1, wrong:text, correct: pi[position]};
+        wrongDecimals.push(wrongNumber);    
+
         if(fails===3) {
             inputDecimals.disabled = true;
             restart.style.display = "block";
-            opportunity.innerText = icons[3];
+            statistics.style.display = "block";
+            opportunity.innerText = "✘";
             gain.innerText = `Next number: ${pi[position]}`;
-            renderStatistics();
+            renderStatistics(wrongDecimals);
             
         }
     }
@@ -61,17 +71,37 @@ inputDecimals.addEventListener("keyup", event => {
 function restartGame(){
     fails=0;
     position = 0;
-    totalscore = 0;restart.style.display = "none";
+    totalscore = 0;
+    wrongDecimals = [];
     renderOpportunities();
+    restart.style.display = "none";
     inputDecimals.disabled = false;
     result.innerText = "π : 3.";
-    result.style.color = "#3D685F";
+    result.style.color = "#1ABC9C";
     score.innerText = "Your Score: 0";
     gain.innerText = "";
     statistics.style.display = "none";
+   
 }
 
-function renderStatistics(){
-    statistics.style.display = "flex";
-    maximun.innerText = `Max Level: ${position}`
+function renderStatistics(data){
+    console.log(data);
+    tableContainer.innerHTML += 
+    `<div id="tableContent">
+        <div class="header1" id="column1">Digit</div>
+        <div class="header1" id="column2">Wrong Digit</div>
+        <div class="header1" id="column3">Right Digit</div>
+    </div>`;
+    
+
+    data.forEach( (test) => {
+    tableContainer.innerHTML += 
+    `<div id="tableContent1">
+        <div class="header1" id="column1">Digit</div>
+        <div class="header1" id="column2">Wrong Digit</div>
+        <div class="header1" id="column3">Right Digit</div>
+    </div>`
+});
+tableContainer.removeChild(tableContent);
 }
+

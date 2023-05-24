@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+}
+
+
+
+
+#tableContainer{
+    display: flex;
+    flex-direction: column;
+}
+#tableContent{
+    display: flex; 
+    padding: 0 10px 0 10px;
+}
+
+#column1, #column2, #column3 {
+    padding: 10px 1px  10px 1px;
+    margin: 4px 5px 4px 5px ;
+    flex-basis: 100%;
+    text-align: center;
+    background-color: #F1F3F4;
+    border-radius: 5px;
+}
+
+.header1{
+    background-color:#DADCE0 !important ;
+}

@@ -5,21 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <h1 id="symbol">π</h1>
-    <h2 id="title">Pi Trainer</h2>
-    <input type="tel" id="inputDecimals" placeholder="Write number π decimals...">
+    <h1>Pi Trainer</h2>
+    <input type="tel" id="inputDecimals" placeholder="Write number pi decimals ...">
     <div id="container">
         <div id="opportunity"></div>
         <div id="gain"></div>
     </div>    
-    <div id="result">π:3.</div>
+    <div id="result">Pi:3.</div>
     <h2 id="score">Score: 0 points</h2>
     <button onclick="restartGame()" id="restart" >Restart</button>
     <div id="statistics">
-        <div id="errors">Errors Levels:</div>
+        <div id="tableContainer">   
+        </div>
         <div id="maximun"></div>
     </div>
 </body>
