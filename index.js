@@ -46,7 +46,7 @@ inputDecimals.addEventListener("keyup", event => {
         position += 1;
         totalscore += 100;
         score.innerText = `Your score: ${totalscore} points`;
-        gain.innerText = `+ ${100} points`;
+        gain.innerText = `⭐ x( ${position} )`;
         if(maxLevel<position){
             maxLevel = position;
         }

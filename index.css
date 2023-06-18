@@ -69,7 +69,7 @@ h1{
     border-radius: 5px;
     padding-top: 6px;
     height: 40px;
-    width: 240px;
+    min-width: 240px;
     font-size: 20px;
     box-shadow: rgba(0, 0, 0, 0.2) 2px 5px 10px;
     animation: flotante 1s infinite;
@@ -101,7 +101,6 @@ h1{
 }
 
 #score{
-   
     padding:20px 0 10px 0;
     width: 360px;
     text-align: center;
@@ -122,7 +121,6 @@ h1{
     color: #FFFFFF;
     margin-bottom: 20px;
     animation: flotante 1s infinite;
-    
 }
 
 #restart:hover{
@@ -138,10 +136,7 @@ h1{
     margin-bottom: 30px;
     align-items: center;
     border-top: #CA3755 solid 2px;
-    
 }
-
-
 
 #tableContainer{
     display: flex;
@@ -158,7 +153,6 @@ h1{
    
 }
 
-
 #column1, #column2, #column3 {
     padding: 10px 1px  10px 1px;
     margin: 4px 5px 4px 5px ;
@@ -167,16 +161,12 @@ h1{
     background-color: #F1F3F4;
     border-radius: 5px;
     color: #595a5c;
-   
-    
 }
 
 #tableContent0 #column1, #tableContent0 #column2, #tableContent0 #column3 {
     background-color:#DADCE0;
     padding: 1px !important;
-    
 }
-
 
 #maximun{
     margin-top: 2px;
@@ -190,5 +180,4 @@ h1{
     text-align: center;
     color: #FFFFFF;
     box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 15px;
-
 }
