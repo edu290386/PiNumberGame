@@ -48,7 +48,7 @@ inputDecimals.addEventListener("keyup", event => {
         score.innerText = `Your score: ${totalscore} points`;
         gain.innerText = `⭐ x( ${position} )`;
         if(maxLevel<position){
-            maxLevel = position;
+            maxLevel = position;  
         }
         
     } else {
@@ -68,6 +68,8 @@ inputDecimals.addEventListener("keyup", event => {
             gain.innerText = `Next number: ${pi[position]}`;
             maximun.innerText = `Maximun Level: ${maxLevel}`;
             renderStatistics(wrongDecimals);
+            let levelHistory = {user:"Eduardo", maxlevel:maxLevel, lastlevel:position}
+            sendStatistics(levelHistory);
         }
     }
 })
@@ -89,7 +91,8 @@ function restartGame(){
 }
 
 function renderStatistics(data){
-    console.log(data);
+    getStatistics();
+    
     tableContainer.innerHTML += 
     `<div id="tableContent0">
         <div class="header1" id="column1">Digit Failed</div>
@@ -119,3 +122,35 @@ function removeStatistics(){
     tableContent2.remove();
     tableContent3.remove();
 }
+
+const url = "https://63dc3850c45e08a04356e2c8.mockapi.io/todo";
+
+const sendStatistics = async (body) => {
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      const data = await response.json();
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+const getStatistics = async () => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
